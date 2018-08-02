@@ -9,6 +9,8 @@ setwd("G:/causal_tree/simulation_study5_large_sample_unif")
 #read in source data
 source_data <- read.csv('G:/causal_tree/simulation_study5_large_sample_unif/large_unif.csv', header = TRUE, sep = ',')
 
+
+
 #train test split
 smp_size <- floor(0.625 * nrow(source_data))
 set.seed(123)
@@ -24,6 +26,7 @@ cf_plot <- function(test_set){
   
   return(p)
 }
+
 
 plot_residual <-function(test_set){
   test_set$residual <- test_set$true_effect - test_set$pred
@@ -59,6 +62,7 @@ ggsave (paste0("result\\d1k2.png"), device = "png")
 #plot residual
 d1k2_residual <-plot_residual(d1_test_k2)
 ggsave (paste0("result\\d1k2_residual.png"), device = "png")
+
 
 #Design 1, k = 3
 d1_data_k3 <- source_data %>% 
