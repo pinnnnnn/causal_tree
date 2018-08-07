@@ -4,6 +4,7 @@ library(dplyr)
 library(ggplot2)
 #install.packages("grf")
 library(grf)
+library(caret)
 setwd("G:/causal_tree/simulation_grf/unif_tree_rf")
 
 # initiate a dataframe
